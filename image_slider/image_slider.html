@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Image Slider by Prashant</h1>
+    <div class="parent">
+        <div id="backward">
+            <button id="prev" onclick="backward();">&#x25c1;</button>
+        </div>
+    <div class="image">
+        <img src="" id="pic">
+    </div>
+    <div id="forward">
+        <button id="next" onclick="forward();">&#x25B7;</button>
+    </div>
+</div>
+    <script>
+        arr=["mountain.jpg","nature.jpg","flowers.jpg"];
+        var value=0;
+        slider1();
+        function slider1(){
+            document.getElementById("pic").src=arr[value];  
+            value++;
+            if(value==arr.length){
+                value=0;
+            }
+        }
+        // window.setInterval(slide,3000);
+
+        function backward(){
+            document.getElementById("pic").src=arr[value];
+            value--;
+            if(value==0){
+                value=arr.length-1;
+            }
+        }
+        function forward(){
+            document.getElementById("pic").src=arr[value];
+            value++;
+            if(value==arr.length){
+                value=0;
+            }
+        }
+    </script>
+
+</body>
+</html>
